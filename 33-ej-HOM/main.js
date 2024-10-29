@@ -125,7 +125,7 @@ const frutas = [
     }
   ];
 
-
+//! ... sirve para duplicar las propiedades que ya estan en el grupo, por ejemplo ...peliculas y no hacerlo a mano.
 
 //* 1.- Vamos a imprimir todas los títulos de las películas con un número delante. 
 
@@ -203,11 +203,11 @@ console.log(peliculasOrdenadas);
 
 //* 10.- Ordena las películas por el nombre del director de forma alfabética A-Z
 
-const peliculasOrdenadasPorDirector = peliculas.sort((a, b) => {
-  if (a.director < b.director) {
+const peliculasOrdenadasPorDirector = [...peliculas].sort((a, b) => {
+  if (a.director.toLowerCase() < b.director.toLowerCase()) {
     return -1; // a viene antes que b
   }
-  if (a.director > b.director) {
+  if (a.director.toLowerCase() > b.director.toLowerCase()) {
     return 1; // b viene antes que a
   }
   return 0; // son iguales
@@ -230,3 +230,6 @@ console.log(`¿Hay alguna película de Terror? ${hayPeliculasDeTerror ? 'Sí' : 
 const todasLasPeliculasDuranMasDe2Horas = peliculas.every(pelicula => pelicula.duracion > 120);
 
 console.log(`¿Duran todas las películas más de 2 horas? ${todasLasPeliculasDuranMasDe2Horas ? 'Sí' : 'No'}`);
+
+
+
